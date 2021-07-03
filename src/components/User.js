@@ -1,6 +1,5 @@
 import React from 'react';
-// import PropTypes from "prop-types";
-// import users from '../users.json';
+import PropTypes from "prop-types";
 
   
 const User = (props) => { 
@@ -36,14 +35,14 @@ const User = (props) => {
     );
     
   };
-    // User.propTypes = {
-    //     name: PropTypes.string.isRequired,
-    //     tag: PropTypes.string.isRequired,
-    //     location: PropTypes.string.isRequired,
-    //     followers: PropTypes.number.isRequired,
-    //     likes: PropTypes.number.isRequired,
-    //     views: PropTypes.number.isRequired,
-    //   };
+    User.propTypes = {
+        name: PropTypes.string.isRequired,
+        tag: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        followers: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+      };
 
 
 export default User;
