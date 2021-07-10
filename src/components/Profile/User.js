@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import styles from './User.module.css';
+import defaultImg from './default.svg';
 
   
 const User = (props) => { 
    return (
     <div className={styles.friend_profile}>
     <div className={styles.friend_description}>
-      <img
-        src="https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg"
-        alt="Аватар пользователя"
-        name="avatar"
+      <img src={props.avatar}
+      alt="Аватар пользователя" 
+      className={styles.friend_avatar} 
       />
 
       <p className={styles.friend_name}>{props.name}</p>
@@ -18,16 +18,16 @@ const User = (props) => {
       <p className={styles.friend_location}>{props.location}</p>
     </div>
   
-    <ul className="stats">
-      <li>
+    <ul className={styles.stats}>
+      <li className={styles.item}>
         <span className={styles.friend_label}>followers</span>
         <span className={styles.friend_quantity}>{props.followers}</span>
       </li>
-      <li>
+      <li className={styles.item}>
         <span className={styles.friend_label}>Views</span>
         <span className={styles.friend_quantity}>{props.views}</span>
       </li>
-      <li>
+      <li className={styles.item}>
         <span className={styles.friend_label}>Likes</span>
         <span className={styles.friend_quantity}>{props.likes}</span>
       </li>
@@ -35,6 +35,9 @@ const User = (props) => {
   </div>
     );
     
+  };
+  User.defaultProps = {
+    avatar: defaultImg,
   };
     User.propTypes = {
         name: PropTypes.string.isRequired,

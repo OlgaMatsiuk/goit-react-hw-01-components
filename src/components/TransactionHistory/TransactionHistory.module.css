@@ -1,0 +1,24 @@
+.transaction_history {
+    width: 850px;
+    background-color: #fff;
+    border: 1px solid silver;
+  }
+  
+  .transaction_head {
+    text-transform: uppercase;
+    background-color: royalblue;
+  }
+  
+  .transaction_title {
+    padding: 15px;
+  
+    color: white;
+    font-weight: bold;
+  }
+  
+  .transaction_item {
+    padding: 10px;
+    text-align: center;
+    background-color: beige;
+    text-transform: capitalize;
+  }

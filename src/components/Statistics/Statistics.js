@@ -1,30 +1,42 @@
 import React from 'react';
-import PropTypes from "prop-types";
-// import defaultImage from './default.svg';
+import PropTypes from 'prop-types';
+import styles from './Statistics.module.css';
 
-const Statistics = (props) => {
-    return (
-    <section class="statistics">
-  <h2 class="title">Upload stats</h2>
-  <ul class="stat-list">
-    <li class="item">
-      <span class="label">{props.label}</span>
-      <span class="percentage">{props.percentage}</span>
-    <img src={props.url} width="120" />
-    </li>
-    
-  </ul>
-</section>
-    )
+const Statistics = ({ stats, title }) => (
+  <section className={styles.statistics}>
+    {title && <h2 className={styles.title}>{title}</h2>}
+
+    <ul className={styles.stat_list}>
+      {stats.map(statistic => (
+        <li
+          className={styles.item}
+          style={{ backgroundColor: `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})` }}
+          key={statistic.id}
+        >
+          <span className={styles.label}>{statistic.label}</span>
+          <span className={styles.percentage}>{statistic.percentage + '%'}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+);
+function getRandom(min, max){
+  return Math.ceil(Math.random() * (max - min) + min)
+}
+
+Statistics.defaultProps = {
+  title: '',
 };
-// Statistics.propTypes = {
-//   url: PropTypes.string,
-//   // title: PropTypes.string,
-//   label: PropTypes.string,isRequired, 
-//   percentage: PropTypes.number.isRequired,
-// }
-// Statistics.defaultProps = {
-//     url: defaultImage,
-// }  
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default Statistics;

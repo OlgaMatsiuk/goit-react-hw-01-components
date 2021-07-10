@@ -1,0 +1,69 @@
+.friend_profile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;  
+    border-radius: 4px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin: 30px;
+  
+  }
+  
+  .friend_description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    border-radius: 4px 4px 0px 0px;
+
+  }
+  
+  .friend_avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .friend_name {
+    margin-bottom: 15px;
+    color: rgb(43, 42, 42);
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .friend_tag, .friend_location {
+    margin-bottom: 5px;
+    color: silver; 
+  }
+  
+  .stats {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-radius: 0px 0px 4px 4px;
+
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: calc(100%/3);
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .friend_label {
+    margin-bottom: 5px;
+    color: gray;
+  }
+  
+  .friend_quantity {
+    color: rgb(43, 42, 42);
+    font-weight: bold;
+    font-size: 20px;
+  }
